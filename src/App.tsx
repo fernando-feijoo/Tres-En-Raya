@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Game from './components/Game';
 import PlayerInput from './components/PlayerInput';
 import Scoreboard from './components/Scoreboard';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [player1, setPlayer1] = useState('Jugador 1');
@@ -42,6 +43,7 @@ const App: React.FC = () => {
         setScore2={setScore2}
         onNextTurn={handleNextTurn}
       />
+      <Footer />
     </div>
   );
 };
