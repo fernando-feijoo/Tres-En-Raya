@@ -14,23 +14,27 @@ Tres en Raya Interactivo es un juego de tres en raya en línea que permite a dos
 - **Animaciones de parpadeo:** Indicación de los movimientos que van a ser borrados.
 - **Celebración de victorias:** Animación de confeti para festejar las victorias.
 - **Experiencia de juego fluida:** Reinicio automático del tablero después de cada partida.
+- **Control de sonido:** Opción para activar o desactivar el sonido de victoria.
 
 ## 🛠️ Instalación
 
 Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 1. **Clona el repositorio:**
+
    ```sh
    git clone https://github.com/tu-usuario/Tres-En-Raya.git
    cd Tres-En-Raya
    ```
 
 2. **Instala las dependencias:**
+
    ```sh
    npm install
    ```
 
 3. **Inicia la aplicación:**
+
    ```sh
    npm start
    ```
@@ -46,21 +50,28 @@ El proyecto está organizado de la siguiente manera:
 
 ```plaintext
 └── 📁Tres-En-Raya
+    └── 📁hooks
+        └── post-receive
     └── 📁public
+        └── .htaccess
         └── TFeijoo.ico
         └── TFeijooLogo.png
     └── 📁src
         └── App.tsx
         └── 📁assets
+            └── Celebracion1.wav
         └── 📁components
             └── Board.tsx
+            └── Footer.tsx
             └── Game.tsx
             └── PlayerInput.tsx
             └── Scoreboard.tsx
             └── Square.tsx
+        └── global.d.ts
         └── index.css
         └── main.tsx
         └── vite-env.d.ts
+    └── .cpanel.yml
     └── .gitignore
     └── eslint.config.js
     └── index.html
