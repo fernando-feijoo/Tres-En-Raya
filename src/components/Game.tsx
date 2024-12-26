@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Board from './Board';
+import Celebracion from '../assets/Celebracion1.wav'; // Asegúrate de que la ruta sea correcta
 
 interface GameProps {
   player1: string;
@@ -25,14 +26,21 @@ const Game: React.FC<GameProps> = ({
   const [turnCount, setTurnCount] = useState(0);
   const [blinkingIndex, setBlinkingIndex] = useState<number | null>(null);
   const [moves, setMoves] = useState<number[]>([]);
+  const [isSoundOn, setIsSoundOn] = useState(true); // Estado para controlar el sonido
   const blinkTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (winner) {
-      // Confetti Effect
+      // Reproducir sonido de celebración si está activado
+      if (isSoundOn) {
+        const celebrationSound = new Audio(Celebracion);
+        celebrationSound.play();
+      }
+
+      // Efecto de confeti
       const count = 800;
       const defaults = {
-        origin: { y: 0.7 },
+        origin: { y: 0.85 },
       };
       const fire = (particleRatio: number, opts: object) => {
         window.confetti({
@@ -53,7 +61,7 @@ const Game: React.FC<GameProps> = ({
 
       setTimeout(resetBoard, 4300); // Reiniciar el tablero después de 4.3 segundos
     }
-  }, [winner, startingPlayer, onNextTurn]);
+  }, [winner, startingPlayer, onNextTurn, isSoundOn]);
 
   useEffect(() => {
     if (!winner && turnCount >= 7) {
@@ -125,6 +133,18 @@ const Game: React.FC<GameProps> = ({
         player1Color={color1}
         player2Color={color2}
       />
+      <div className='flex justify-center mt-4'>
+        <button
+          onClick={() => setIsSoundOn(!isSoundOn)}
+          className='text-white text-2xl'
+        >
+          {isSoundOn ? (
+            <i className='fas fa-volume-up'></i>
+          ) : (
+            <i className='fas fa-volume-mute'></i>
+          )}
+        </button>
+      </div>
     </>
   );
 };
