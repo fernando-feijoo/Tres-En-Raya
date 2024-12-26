@@ -7,7 +7,7 @@ cd /home/tfeijooc/repositories/Tres-En-Raya || exit
 git pull origin deploy
 
 # Actualizar el directorio de trabajo
-GIT_WORK_TREE=/home/tfeijooc/repositories/Tres-En-Raya git checkout -f
+GIT_WORK_TREE=/home/tfeijooc/repositories/Tres-En-Raya git checkout -f deploy
 
 # Ejecutar las tareas de despliegue definidas en .cpanel.yml
 /usr/local/cpanel/3rdparty/bin/git-deploy
