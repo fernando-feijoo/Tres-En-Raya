@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/tfeijooc/react.tfeijoo.com/Tres-En-Raya-Interactivo
     - /bin/cp -R /home/tfeijooc/repositories/Tres-En-Raya/dist/* $DEPLOYPATH/
+    - /bin/cp /home/tfeijooc/repositories/Tres-En-Raya/public/.htaccess $DEPLOYPATH/
