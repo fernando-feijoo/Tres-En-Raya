@@ -12,8 +12,6 @@ interface GameProps {
 }
 
 const Game: React.FC<GameProps> = ({
-  // player1,
-  // player2,
   color1,
   color2,
   setScore1,
@@ -27,7 +25,7 @@ const Game: React.FC<GameProps> = ({
   const [turnCount, setTurnCount] = useState(0);
   const [blinkingIndex, setBlinkingIndex] = useState<number | null>(null);
   const [moves, setMoves] = useState<number[]>([]);
-  const blinkTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const blinkTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (winner) {
@@ -37,7 +35,7 @@ const Game: React.FC<GameProps> = ({
         origin: { y: 0.7 },
       };
       const fire = (particleRatio: number, opts: object) => {
-        confetti({
+        window.confetti({
           ...defaults,
           ...opts,
           particleCount: Math.floor(count * particleRatio),
@@ -118,14 +116,8 @@ const Game: React.FC<GameProps> = ({
     }
   };
 
-  // const status = winner
-  //   ? `Ganador: ${winner === 'X' ? player1 : player2}`
-  //   : `Turno de: ${isXNext ? player1 : player2}`;
-
   return (
     <>
-      {/* Deje de usar el marcador de turno en la parte superior */}
-      {/* <div className='mb-4 text-2xl h-12 flex items-center justify-center'>{status}</div> */}
       <Board
         squares={board}
         onClick={handleClick}
