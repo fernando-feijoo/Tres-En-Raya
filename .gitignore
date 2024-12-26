@@ -9,8 +9,8 @@ lerna-debug.log*
 
 node_modules
 
-# Ignorar la carpeta dist en local, pero no en servidor
-dist/
+# Ignorar la carpeta dist en local, pero no en servidor con rama deploy
+!/dist
 
 dist-ssr
 *.local
