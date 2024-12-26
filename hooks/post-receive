@@ -4,7 +4,7 @@
 cd /home/tfeijooc/repositories/Tres-En-Raya || exit
 
 # Hacer un git pull para obtener los últimos cambios
-git pull origin master
+git pull origin deploy
 
 # Actualizar el directorio de trabajo
 GIT_WORK_TREE=/home/tfeijooc/repositories/Tres-En-Raya git checkout -f
