@@ -9,9 +9,5 @@ git pull origin master
 # Actualizar el directorio de trabajo
 GIT_WORK_TREE=/home/tfeijooc/repositories/Tres-En-Raya git checkout -f
 
-# Instalar dependencias y construir el proyecto
-npm install
-npm run build
-
 # Ejecutar las tareas de despliegue definidas en .cpanel.yml
 /usr/local/cpanel/3rdparty/bin/git-deploy

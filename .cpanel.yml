@@ -2,7 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tfeijooc/react.tfeijoo.com/Tres-En-Raya-Interactivo
-    - cd /home/tfeijooc/repositories/Tres-En-Raya
-    - npm install
-    - npm run build
     - /bin/cp -R /home/tfeijooc/repositories/Tres-En-Raya/dist/* $DEPLOYPATH/
