@@ -1,0 +1,12 @@
+#!/bin/bash
+# Navegar a la carpeta del repositorio
+cd /home/tfeijooc/repositories/Tres-En-Raya || exit
+
+# Hacer un git pull para obtener los últimos cambios
+git pull origin master
+
+# Actualizar el directorio de trabajo
+GIT_WORK_TREE=/home/tfeijooc/repositories/Tres-En-Raya git checkout -f
+
+# Ejecutar las tareas de despliegue definidas en .cpanel.yml
+/usr/local/cpanel/3rdparty/bin/git-deploy

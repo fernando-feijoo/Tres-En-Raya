@@ -32,8 +32,16 @@ const PlayerInput: React.FC<PlayerInputProps> = ({
   };
 
   const predefinedColors = [
-    '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF',
-    '#00FFFF', '#33CCFF', '#FFA500', '#800080', '#008000'
+    { code: '#FF0000', name: 'ROJO' },
+    { code: '#00FF00', name: 'VERDE' },
+    { code: '#0000FF', name: 'AZUL' },
+    { code: '#FFFF00', name: 'AMARILLO' },
+    { code: '#FF00FF', name: 'MAGENTA' },
+    { code: '#00FFFF', name: 'CIAN' },
+    { code: '#33CCFF', name: 'AZUL CLARO' },
+    { code: '#FFA500', name: 'NARANJA' },
+    { code: '#800080', name: 'MORADO' },
+    { code: '#008000', name: 'VERDE OSCURO' }
   ];
 
   return (
@@ -57,12 +65,12 @@ const PlayerInput: React.FC<PlayerInputProps> = ({
               <select
                 value={color1}
                 onChange={(e) => setColor1Local(e.target.value)}
-                className='mb-2 p-2 border rounded w-20'
+                className='mb-2 p-2 border rounded w-full'
                 style={{ backgroundColor: color1 }}
               >
                 {predefinedColors.map((color) => (
-                  <option key={color} value={color} style={{ backgroundColor: color }}>
-                    &nbsp;
+                  <option key={color.code} value={color.code} style={{ backgroundColor: color.code }}>
+                    {color.name}
                   </option>
                 ))}
               </select>
@@ -80,12 +88,12 @@ const PlayerInput: React.FC<PlayerInputProps> = ({
               <select
                 value={color2}
                 onChange={(e) => setColor2Local(e.target.value)}
-                className='mb-2 p-2 border rounded w-20'
+                className='mb-2 p-2 border rounded w-full'
                 style={{ backgroundColor: color2 }}
               >
                 {predefinedColors.map((color) => (
-                  <option key={color} value={color} style={{ backgroundColor: color }}>
-                    &nbsp;
+                  <option key={color.code} value={color.code} style={{ backgroundColor: color.code }}>
+                    {color.name}
                   </option>
                 ))}
               </select>

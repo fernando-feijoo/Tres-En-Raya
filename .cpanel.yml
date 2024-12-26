@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/tfeijooc/react.tfeijoo.com/Tres-En-Raya-Interactivo
+    - /bin/cp -R /home/tfeijooc/repositories/tfeijoo.com/dist/* $DEPLOYPATH/
