@@ -57,11 +57,12 @@ const PlayerInput: React.FC<PlayerInputProps> = ({
               <select
                 value={color1}
                 onChange={(e) => setColor1Local(e.target.value)}
-                className='mb-2 p-2 border rounded w-full'
+                className='mb-2 p-2 border rounded w-20'
+                style={{ backgroundColor: color1 }}
               >
                 {predefinedColors.map((color) => (
                   <option key={color} value={color} style={{ backgroundColor: color }}>
-                    {color}
+                    &nbsp;
                   </option>
                 ))}
               </select>
@@ -79,11 +80,12 @@ const PlayerInput: React.FC<PlayerInputProps> = ({
               <select
                 value={color2}
                 onChange={(e) => setColor2Local(e.target.value)}
-                className='mb-2 p-2 border rounded w-full'
+                className='mb-2 p-2 border rounded w-20'
+                style={{ backgroundColor: color2 }}
               >
                 {predefinedColors.map((color) => (
                   <option key={color} value={color} style={{ backgroundColor: color }}>
-                    {color}
+                    &nbsp;
                   </option>
                 ))}
               </select>

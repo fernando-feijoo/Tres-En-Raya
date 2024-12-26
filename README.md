@@ -37,7 +37,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 4. **Abre tu navegador y ve a:**
    ```sh
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 ## 📂 Estructura del Proyecto
