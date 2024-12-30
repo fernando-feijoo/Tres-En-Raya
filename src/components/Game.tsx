@@ -64,8 +64,8 @@ const Game: React.FC<GameProps> = ({
   }, [winner, startingPlayer, onNextTurn, isSoundOn]);
 
   useEffect(() => {
-    if (!winner && turnCount >= 7) {
-      const indexToBlink = moves[turnCount - 7];
+    if (!winner && turnCount >= 6) {
+      const indexToBlink = moves[turnCount - 6];
       setBlinkingIndex(indexToBlink);
 
       // Cancelar cualquier temporizador anterior
@@ -77,8 +77,8 @@ const Game: React.FC<GameProps> = ({
         setBlinkingIndex(null);
       }, 16000); // Titilar por 16 segundos
     }
-    if (!winner && turnCount >= 8) {
-      const indexToClear = moves[turnCount - 8];
+    if (!winner && turnCount >= 7) {
+      const indexToClear = moves[turnCount - 7];
       setBoard((prevBoard) => {
         const newBoard = [...prevBoard];
         newBoard[indexToClear] = null;
